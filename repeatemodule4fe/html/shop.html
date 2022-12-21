@@ -1,0 +1,124 @@
+
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >
+    Create Product
+</button>
+    <h1 id="shopName">user</h1>
+    <h1 id="namehienthi">shop name</h1>
+    <button type="button" onclick="logout()">logout</button>
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>NAME</th>
+            <th>IMG</th>
+            <th>PRICE</th>
+            <th>AMOUNT</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
+        </thead>
+        <tbody id="showList">
+
+        </tbody>
+    </table>
+<div class="container mt-3">
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Create Product</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input id="name" placeholder="Nhập name"><br>
+                    <input id="img" placeholder="Nhập img"><br>
+                    <input id="price" placeholder="Nhập price"><br>
+                    <input id="amount" placeholder="Nhập amount"><br>
+                    <input id="idshop" placeholder="Nhập idshop" readonly><br>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="create()" data-dismiss="modal">Create</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Product</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="id" hidden>ID</label>
+
+                    <input type="text" class="form-control" id="id">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="nameEdit">
+                </div>
+                <div class="form-group">
+                    <label for="img">Img:</label>
+                    <input type="text" class="form-control" id="imgEdit">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="number" class="form-control" id="priceEdit">
+                </div>
+                <div class="form-group">
+                    <label for="amount">amount:</label>
+                    <input type="number" class="form-control" id="amountEdit">
+                </div>
+                <div class="form-group" readonly>
+                    <label for="shop" hidden>shop:</label>
+                    <input type="text" class="form-control" id="shop" value="1">
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary"
+                        data-dismiss="modal" onclick="edit()">Edit"
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/loginJs.js"></script>
+<script src="../js/shopAdmin.js"></script>
+
